@@ -1,0 +1,33 @@
+:root {
+  --blue: #2563eb; --violet: #7c3aed; --cyan: #06b6d4;
+  --grad: linear-gradient(135deg, var(--blue), var(--violet));
+  --bg: #f4f8ff; --bg2: #eaf0ff; --surface: #ffffff; --surface-glass: rgba(255,255,255,.7);
+  --text: #0c1530; --muted: #4a5578; --border: #dbe4f7; --shadow: 0 6px 24px rgba(37,63,140,.09);
+  --link: #1d4ed8; --soft: #eaf0ff; --soft-text: #1e3fae; --good: #0f7a4a; --good-bg: #e6f7ee; --bad: #b42318; --bad-bg: #fdecea;
+  --r: 20px; --r-sm: 12px; --max: 1160px;
+  --font: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+[data-theme="dark"] {
+  --bg: #070b1c; --bg2: #0d1430; --surface: #101936; --surface-glass: rgba(16,25,54,.65);
+  --text: #eef2ff; --muted: #a6b2d6; --border: #243059; --shadow: 0 8px 30px rgba(0,0,0,.45);
+  --link: #8fb0ff; --soft: #1a2552; --soft-text: #c3d3ff; --good: #5be3a2; --good-bg: #0e2a22; --bad: #ff9b92; --bad-bg: #3a1618;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--font); color: var(--text); line-height: 1.6; font-size: 1.0625rem;
+  background: radial-gradient(900px 500px at 10% -10%, rgba(37,99,235,.14), transparent 60%), radial-gradient(800px 500px at 100% 0, rgba(124,58,237,.12), transparent 60%), var(--bg); background-attachment: fixed; }
+h1, h2, h3 { line-height: 1.2; letter-spacing: -.02em; margin: 0 0 .6em; }
+h1 { font-size: clamp(2rem, 4vw + 1rem, 3.4rem); } h2 { font-size: clamp(1.4rem, 1.5vw + 1rem, 2rem); margin-top: 1.6em; } h3 { font-size: 1.15rem; }
+p { margin: 0 0 1em; }
+a { color: var(--link); } a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; border-radius: 6px; }
+.container { width: min(100% - 2rem, var(--max)); margin-inline: auto; }
+/* .narrow { max-width: 760px; } */
+.section { padding-block: 2.5rem; }
+.sr-only, .sr-only-file { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip-link { position: absolute; left: -999px; top: 0; background: var(--blue); color: #fff; padding: .6rem 1rem; z-index: 100; }
+.skip-link:focus { left: 8px; top: 8px; }
+.muted { color: var(--muted); } .small { font-size: .9rem; }
+.lead { font-size: 1.15rem; color: var(--muted); max-width: 62ch; }
+main:focus { outline: none; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
