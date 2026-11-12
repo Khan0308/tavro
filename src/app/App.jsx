@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import ScrollToTop from '../components/ScrollToTop.jsx';
@@ -33,6 +34,7 @@ export default function App() {
         </div>
       </main>
       <Footer />
+      <Analytics />
     </div>
   );
 }
